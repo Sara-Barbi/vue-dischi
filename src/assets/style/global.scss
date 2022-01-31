@@ -10,10 +10,14 @@
 }
 /*-------------CONTAINERS------------*/
 
-.container-small{
-    max-width: 1100px;
-    margin: 50px auto;
+.mycontainer{
+   max-width: 1000px;
+   margin:0 auto;
+   flex-wrap:wrap;
 }
+
+
+
 
 
 /*-------------GLOBALS---------------*/
