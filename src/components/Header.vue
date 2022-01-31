@@ -25,7 +25,7 @@ export default {
 
 div{
   
-  min-height: 70px;
+  min-height: 65px;
   background-color: $headerBack;
 
    img{
