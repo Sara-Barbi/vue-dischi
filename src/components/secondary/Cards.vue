@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex mycontainer">
+  <div class="d-flex mycontainer justify-content-center">
       <SingleCard 
       v-for= "(elementi , index) in artistiLista"
       :key="index"
