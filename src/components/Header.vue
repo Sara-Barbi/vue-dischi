@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 d-flex align-items-center ">
           <img src="../assets/img/spotify-logo.png" alt="">
         </div>
        </div>
@@ -23,6 +23,28 @@ export default {
 <style scoped lang="scss">
 @import '../assets/style/variables.scss';
 
+div{
+  
+  min-height: 70px;
+  background-color: $headerBack;
+
+   img{
+  width: $logoWidth;
+  margin-left: $logoml;
+  float:$logoPosition;
+  background: $logoBack;
+  border-radius:$circleBack;
+}
+
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -36,3 +58,4 @@ export default {
 
 
 </style>
+
