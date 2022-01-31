@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+
     <Header />
     <Main />
     <Footer />
@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/style/global.scss';
+@import './assets/style/variables.scss';
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

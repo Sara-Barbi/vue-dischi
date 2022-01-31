@@ -1,0 +1,20 @@
+@import './variables.scss' ;
+
+
+/*--------------RESET---------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*-------------CONTAINERS------------*/
+
+.container-small{
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+
+/*-------------GLOBALS---------------*/
+
