@@ -28,6 +28,7 @@ export default {
 
 .container-fluid{
   background-color:$mainBack;
+  height: calc(100vh - 65px);
 }
 
 </style>

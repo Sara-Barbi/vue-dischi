@@ -24,10 +24,11 @@ export default {
 
 <style lang='scss' scoped>
 
+
 .user{
   width:180px ;
   min-height:280px;
-  background-color: rgb(59, 59, 72);;
+  background-color: rgb(59, 59, 72);
   img{
     width: 160px;
     margin-top: 10px;

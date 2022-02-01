@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex mycontainer justify-content-center">
       <SingleCard 
+      class="mt-3"
       v-for= "(elementi , index) in artistiLista"
       :key="index"
       :info="elementi"
@@ -13,10 +14,12 @@
 import axios from "axios";
 import SingleCard from "./SingleCard.vue";
 
+
 export default {
     name:'Cards',
     components: {
-        SingleCard
+        SingleCard,
+
 
     },
     created(){
