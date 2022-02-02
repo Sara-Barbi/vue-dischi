@@ -6,19 +6,23 @@
          
      
     </div>
+   
   </div>
 </template>
 
 <script>
+
 import Cards from'./secondary/Cards.vue';
 export default {
   name: 'Main',
   components:{
-    Cards
+    Cards,
+
   },
   props: {
     
-  }
+  },
+
 }
 </script>
 

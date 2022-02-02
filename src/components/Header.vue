@@ -6,7 +6,6 @@
           <img src="../assets/img/spotify-logo.png" alt="">
         </div>
         <div class="col-3 d-flex align-content-center">
-          <Cerca />
         </div>
        </div>
     </div>
@@ -14,16 +13,24 @@
 </template>
 
 <script>
-import Cerca from "./secondary/Cerca.vue";
+
+
 
 export default {
   name: 'Header',
   components:{
-    Cerca
-  },
-  props: {
     
-  }
+  },
+  data(){
+    return{
+  
+    }
+  },
+
+
+
+
+  
 }
 </script>
 

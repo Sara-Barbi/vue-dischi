@@ -6,12 +6,20 @@
       :key="index"
       :info="elementi"
       />
+      <Cerca
+        @cambiato=" filtraAlbum"
+        :listageneri="listaGeneri"
+        
+              
+      />
 
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Cerca from "./Cerca.vue";
+
 import SingleCard from "./SingleCard.vue";
 
 
@@ -19,26 +27,40 @@ export default {
     name:'Cards',
     components: {
         SingleCard,
+        Cerca
 
 
     },
     created(){
         this.getArtisti();
+        
     },
     data() {
         return{
             apiURL: "https://flynn.boolean.careers/exercises/api/array/music",
-            artistiLista: []
+            artistiLista: [],
+            genre:"",
+            
+           
+            
         }
+    
 
     },
     methods:{
+        filtraAlbum: function(payloadEmit){
+            this.genre = payloadEmit;
+        },
+
         getArtisti(){
             axios
                 .get(this.apiURL)
                 .then((personaggi) =>{
                     console.log(personaggi.data.response);
                     this.artistiLista = personaggi.data.response ;
+                  
+                    
+         
                     
                 })
                 .catch((errore) => {
@@ -47,8 +69,25 @@ export default {
 
         }
         
-    }
+    },
+    computed:{
+        listaGeneri(){
+            const generiFiltrati = [];
+            this.artistiLista.forEach(element =>{
+                if(!generiFiltrati.includes(element.genre)){
+                    generiFiltrati.push(element.genre)
+                }
+            });
+            return generiFiltrati
+        },
 
+        albumFiltrati(){
+        return this.artistiLista.filter((elementi)=>{
+          return ( elementi.genre.toLowerCase() == this.genre.toLowerCase()) || (this.genre == "")
+          });
+        }
+    },
+  
 }
 </script>
 

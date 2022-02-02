@@ -1,14 +1,16 @@
 <template>
 <span class="d-flex align-items-center">
-    <select 
-        name="" 
-        id=""
-        @click="$emit('search','inputText')">
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Jazz">Jazz</option>
-        <option value="Metal">Metal</option>
+    
+    <select
+        name= "filter-genre"
+        id="filter-genre"
+        v-model="genreFilter"
+        @change='cambioSelect' 
+        
+       >
+        <option v-for="genere in listageneri" :key="genere" :value="genere">{{genere}}</option>
     </select>
+   
 </span>
   
 
@@ -19,9 +21,22 @@ export default {
     name: 'Cerca',
     data (){
         return{
-            
+            genreFilter:"",
         }
-    }
+    },
+        
+    props:{
+        listageneri: Array
+        
+    },
+    methods:{
+
+        cambioSelect: function(){
+           this.$emit('cambiato' ,this.genreFilter)
+        
+        }
+    },
+    
 
 }
 </script>

@@ -13,10 +13,8 @@
 
 export default {
     name:'SingleCard',
-    props:{
-        
-        info: Object
-        
+    props:{   
+        info: Object      
     },
 
 }
