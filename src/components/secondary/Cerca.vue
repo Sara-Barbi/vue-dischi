@@ -5,7 +5,7 @@
         name= "filter-genre"
         id="filter-genre"
         v-model="genreFilter"
-        @change='cambioSelect' 
+        @change='cambioSelect'                                                 
         
        >
         <option v-for="genere in listageneri" :key="genere" :value="genere">{{genere}}</option>

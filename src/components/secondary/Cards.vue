@@ -2,16 +2,15 @@
   <div class="d-flex mycontainer justify-content-center">
       <SingleCard 
       class="mt-3"
-      v-for= "(elementi , index) in artistiLista"
+      v-for= "(elementi , index) in albumFiltrati"
       :key="index"
       :info="elementi"
       />
       <Cerca
-        @cambiato=" filtraAlbum"
+        @cambiato="filtraAlbum"
         :listageneri="listaGeneri"
         
-              
-      />
+     />
 
   </div>
 </template>
@@ -19,7 +18,6 @@
 <script>
 import axios from "axios";
 import Cerca from "./Cerca.vue";
-
 import SingleCard from "./SingleCard.vue";
 
 
@@ -40,8 +38,7 @@ export default {
             apiURL: "https://flynn.boolean.careers/exercises/api/array/music",
             artistiLista: [],
             genre:"",
-            
-           
+
             
         }
     
@@ -49,10 +46,11 @@ export default {
     },
     methods:{
         filtraAlbum: function(payloadEmit){
-            this.genre = payloadEmit;
+            this.genre = payloadEmit; 
+           
         },
 
-        getArtisti(){
+        getArtisti: function(){
             axios
                 .get(this.apiURL)
                 .then((personaggi) =>{
@@ -78,6 +76,7 @@ export default {
                     generiFiltrati.push(element.genre)
                 }
             });
+           
             return generiFiltrati
         },
 
