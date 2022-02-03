@@ -8,7 +8,8 @@
       />
       <Cerca
         @cambiato="filtraAlbum"
-        :listageneri="listaGeneri"
+        :listageneri="listaGeneri" 
+        class='laPosition'
         
      />
 
@@ -65,8 +66,10 @@ export default {
                     document.writeln('sorry, there is an error'+ errore)
                 });
 
+        },
+        trasportaFiglio : function(){
+           this.$emit('cambiare' ,this.listaGeneri())
         }
-        
     },
     computed:{
         listaGeneri(){
